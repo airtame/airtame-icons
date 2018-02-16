@@ -1,0 +1,29 @@
+{
+  "name": "airtame-icons",
+  "version": "0.0.0",
+  "description": "Set of Icons used by Airtame available as SVGs and React Components",
+  "main": "index.js",
+  "bin": "eject.js",
+  "keywords": ["airtame", "icons", "svg", "react"],
+  "author": "Airtame",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.17.0",
+    "eslint-config-airtame": "^3.0.1",
+    "fs-extra": "^5.0.0",
+    "prettier": "^1.10.2",
+    "rimraf": "^2.6.2",
+    "svgo": "^1.0.4",
+    "svgr": "^1.8.1"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "build:icons": "node ./src/build.js",
+    "build:files": "",
+    "build": "npm run clean && npm run build:icons",
+    "test": "jest"
+  }
+}

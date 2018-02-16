@@ -1,0 +1,6 @@
+{
+  "extends": "airtame",
+  "env": {
+    "jest": true
+  }
+}
