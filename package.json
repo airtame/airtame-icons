@@ -1,38 +1,35 @@
 {
   "name": "airtame-icons",
-  "version": "0.0.0",
+  "version": "0.0.0-alpha.1",
   "description": "Set of Icons used by Airtame available as SVGs and React Components",
   "main": "index.js",
   "bin": "cli.js",
-  "keywords": [
-    "airtame",
-    "icons",
-    "svg",
-    "react"
-  ],
+  "keywords": ["airtame", "icons", "svg", "react"],
   "author": "Airtame",
   "license": "ISC",
   "dependencies": {
-    "react": "^16.2.0"
+    "argparse": "^1.0.10",
+    "fs-extra": "^5.0.0",
+    "ncp": "^2.0.0",
+    "react": "^16.2.0",
+    "util.promisify": "^1.0.0"
   },
   "devDependencies": {
-    "argparse": "^1.0.10",
+    "copyfiles": "^1.2.0",
     "eslint": "^4.17.0",
     "eslint-config-airtame": "^3.0.1",
     "eslint-import-resolver-webpack": "^0.8.4",
-    "fs-extra": "^5.0.0",
-    "ncp": "^2.0.0",
     "prettier": "^1.10.2",
     "rimraf": "^2.6.2",
     "svgo": "^1.0.4",
-    "svgr": "^1.8.1",
-    "util.promisify": "^1.0.0"
+    "svgr": "^1.8.1"
   },
   "scripts": {
     "clean": "rimraf dist",
     "build:icons": "node ./src/build.js",
-    "build:files": "",
-    "build": "npm run clean && npm run build:icons",
-    "test": "jest"
+    "build:files": "copyfiles -f ./src/cli.js README.md CHANGELOG.md package.json dist",
+    "build": "npm run clean && npm run build:icons && npm run build:files",
+    "publish": "npm publish ./dist",
+    "release": "npm run build && npm run publish"
   }
 }
