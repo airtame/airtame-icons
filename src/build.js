@@ -49,7 +49,7 @@ const optimizeSvgs = (rootDir, outDir) => {
   return promises;
 };
 
-const buildReactComponents = (rootDir, resolve, reject) => {
+const buildReactComponents = rootDir => {
   const svgs = fse.readdirSync(rootDir);
   const outFile = `${rootDir}/index.js`;
   const promises = [];
