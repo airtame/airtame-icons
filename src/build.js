@@ -5,6 +5,7 @@ const Svgo = require('svgo');
 const svgr = require('svgr').default;
 
 const svgoConfig = require('./util/svgo-config');
+const iconMap = [];
 
 const optimizeSvgs = (rootDir, outDir) => {
   const svgs = fse.readdirSync(rootDir);
@@ -66,6 +67,8 @@ const buildReactComponents = rootDir => {
           .split('-')
           .map(str => capitalize(str))
           .join('');
+
+        iconMap.push({ fileName: svg, componentName });
         fse.readFile(svgFile, 'utf-8', (err, svgCode) => {
           if (err) {
             reject(err);
@@ -98,18 +101,24 @@ const capitalize = str => {
 };
 
 const build = () => {
-  const rootDir = path.resolve(__dirname, 'icons');
-  const outDir = path.resolve(__dirname, '../dist');
+  const rootDir = path.resolve(__dirname, '../');
+  const iconsDir = path.resolve(__dirname, 'icons');
+  const outDir = path.resolve(__dirname, '../build');
 
   console.log('\x1b[1m** Optimizing SVGs **\x1b[0m');
-  Promise.all(optimizeSvgs(rootDir, outDir))
+  Promise.all(optimizeSvgs(iconsDir, outDir))
     .then(() => {
       console.log('\n\x1b[1m** Building React Components **\x1b[0m');
       const promises = buildReactComponents(outDir);
-      const numComponents = promises.length;
-      return Promise.all(promises)
-        .then(() => numComponents)
-        .catch(err => err);
+      return Promise.all(promises).catch(err => err);
+    })
+    .then(() => {
+      const iconMapFile = `${rootDir}/icon-map.js`;
+      fse.writeFile(
+        iconMapFile,
+        `const iconMap = ${JSON.stringify(iconMap)}; export default iconMap;`
+      );
+      return iconMap.length;
     })
     .then(numComponents => {
       console.log('\n\x1b[1m\x1b[32m** Success **\x1b[0m');

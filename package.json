@@ -25,11 +25,11 @@
     "svgr": "^1.8.1"
   },
   "scripts": {
-    "clean": "rimraf dist",
+    "clean": "rimraf build && rimraf icon-map.js",
     "build:icons": "node ./src/build.js",
-    "build:files": "copyfiles -f ./src/cli.js README.md CHANGELOG.md package.json dist",
+    "build:files": "copyfiles -f ./src/cli.js README.md CHANGELOG.md package.json build",
     "build": "npm run clean && npm run build:icons && npm run build:files",
-    "publish": "npm publish ./dist",
+    "publish": "npm publish ./build",
     "release": "npm run build && npm run publish"
   }
 }
