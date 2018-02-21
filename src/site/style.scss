@@ -1,0 +1,68 @@
+@import '../../node_modules/airtame-gooey/global/reset';
+@import '../../node_modules/airtame-gooey/global/colors';
+$secondary-color: #8f99b3;
+$transition-function: cubic-bezier(0.65, 0.05, 0.36, 1);
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  padding: 50px;
+
+  background: $deep-ocean;
+  color: $white;
+}
+
+h1 {
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.icons-wrapper {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+
+  .icon-container {
+    display: inline-block;
+    padding: 15px;
+    border: 1px solid $secondary-color;
+    margin: 10px;
+    box-shadow: 0 4px 30px -6px rgba($pure-black, 1);
+
+    &:hover svg {
+      transform: scale(1.2);
+      fill: $white;
+    }
+
+    h2 {
+      font-size: 16px;
+      font-weight: 300;
+      margin-bottom: 15px;
+    }
+
+    span {
+      display: inline-block;
+      padding: 5px;
+      font-weight: 600;
+      font-size: 12px;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+
+    .code {
+      color: $lipstick;
+      font-family: Courier New, Courier, monospace;
+      font-size: 16px;
+      font-weight: 300;
+      text-align: center;
+    }
+  }
+
+  svg {
+    width: 50px;
+    margin: 10px auto;
+    fill: $secondary-color;
+    transform: scale(1);
+    transition: transform .3s $transition-function, fill .3s $transition-function;
+  }
+}
