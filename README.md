@@ -20,13 +20,13 @@ As React components
 
 ```javascript
 import React from 'react';
-import { IconName } from 'airtame-icons';
+import { IconArrowDown } from 'airtame-icons';
 
 class MyComponent extends React.Component {
   render() {
     return (
       <div>
-        <IconName className="your-class" />
+        <IconArrowDown className="your-class" />
       </div>
     );
   }
@@ -36,13 +36,21 @@ class MyComponent extends React.Component {
 As SVG with Webpack
 
 ```javascript
-const iconName = require('airtame-icons/icon-name.svg');
+const iconName = require('airtame-icons/icon-arrow-down.svg');
 ```
 
 You can also eject all the icons to copy them locally to the desired destination in your project
 
 ```bash
 $ airtame-icons eject src/assets
+```
+
+A `<symbol>` sprite is also available if needed. After ejecting, you can use the SVG Makrup in `airtame-icons-sprite.svg` and use it in your DOM
+
+```html
+<svg class="icon">
+  <use xlink:href="#icon-arrow-down" />
+</svg>
 ```
 
 ## Development

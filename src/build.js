@@ -3,6 +3,7 @@ const path = require('path');
 const fse = require('fs-extra');
 const Svgo = require('svgo');
 const svgr = require('svgr').default;
+const svgstore = require('svgstore');
 
 const svgoConfig = require('./util/svgo-config');
 const iconMap = [];
@@ -96,6 +97,21 @@ const buildReactComponents = rootDir => {
   return promises;
 };
 
+const buildSVGSprite = () => {
+  const iconFolder = path.resolve(__dirname, '../build');
+  const sprite = svgstore();
+
+  iconMap.forEach(icon => {
+    sprite.add(
+      icon.fileName.split('.svg')[0],
+      fse.readFileSync(`${iconFolder}/${icon.fileName}`, 'utf8')
+    );
+    console.log(`\x1b[34m${icon.fileName}\x1b[0m added to sprite`);
+  });
+
+  return fse.writeFileSync(`${iconFolder}/airtame-icons-sprite.svg`, sprite);
+};
+
 const capitalize = str => {
   return str.charAt(0).toUpperCase() + str.slice(1);
 };
@@ -111,6 +127,10 @@ const build = () => {
       console.log('\n\x1b[1m** Building React Components **\x1b[0m');
       const promises = buildReactComponents(outDir);
       return Promise.all(promises).catch(err => err);
+    })
+    .then(() => {
+      console.log('\n\x1b[1m** Building SVG Sprite **\x1b[0m');
+      buildSVGSprite();
     })
     .then(() => {
       const iconMapFile = `${rootDir}/icon-map.js`;
