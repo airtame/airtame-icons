@@ -51,12 +51,12 @@
   },
   "scripts": {
     "clean": "rimraf -rf build && rimraf icon-map.js && rimraf -rf dist",
-    "site-dev":
-      "npm run build:icons && cross-env NODE_ENV=development webpack-dev-server --hot --inline",
     "build:icons": "node ./src/build.js",
     "build:files": "copyfiles -f ./src/cli.js README.md CHANGELOG.md package.json build",
     "build:site": "cross-env NODE_ENV=production webpack",
     "build": "npm run clean && npm run build:icons && npm run build:files && npm run build:site",
+    "dev":
+      "npm run clean && npm run build:icons && cross-env NODE_ENV=development webpack-dev-server --hot --inline",
     "gh-pages": "gh-pages -d dist",
     "publish": "npm publish ./build && npm run gh-pages",
     "release": "npm run build && npm run publish"
