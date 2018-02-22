@@ -67,7 +67,7 @@
     "dev":
       "npm run clean && npm run build:icons && cross-env NODE_ENV=development webpack-dev-server --hot --inline",
     "gh-pages": "gh-pages -d dist",
-    "publish": "npm publish ./build && npm run gh-pages",
-    "release": "npm run build && npm run publish"
+    "publish": "npm publish ./build",
+    "release": "npm run build && npm run publish && npm run gh-pages"
   }
 }
