@@ -1,5 +1,12 @@
 # CHANGELOG
 
+# Unreleased
+
+* Export every icon into an indificual file React component
+* Enable babel transpilation for released React components
+* Fix ESLint resolver issues
+* Updates to release process
+
 ## v0.0.0-alpha.1 [Commits](https://github.com/airtame/airtame-icons/commits/v0.0.0-alpha.1)
 
 * Optimize icons in `/src` with SVGO
