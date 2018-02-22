@@ -7,7 +7,6 @@ const ArgumentParser = require('argparse').ArgumentParser;
 const util = require('util');
 require('util.promisify').shim();
 const exec = util.promisify(require('child_process').exec);
-const ncp = require('ncp').ncp;
 
 const projectPackage = require('./package.json');
 const SCRIPT_VERSION = projectPackage.version;
