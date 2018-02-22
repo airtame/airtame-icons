@@ -16,7 +16,6 @@
   "dependencies": {
     "argparse": "^1.0.10",
     "fs-extra": "^5.0.0",
-    "ncp": "^2.0.0",
     "util.promisify": "^1.0.0"
   },
   "peerDependencies": {
