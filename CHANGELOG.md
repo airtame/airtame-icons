@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## Unreleased
+## v0.0.0-alpha.1 [Commits](https://github.com/airtame/airtame-icons/commits/v0.0.0-alpha.1)
 
 * Optimize icons in `/src` with SVGO
 * Expose icons as React compontner
