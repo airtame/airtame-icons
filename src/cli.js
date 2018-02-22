@@ -28,6 +28,10 @@ eject.addArgument('directory', {
   action: 'store',
   help: 'The directory to copy the SVGs into',
 });
+eject.addArgument(['--sprite'], {
+  action: 'storeTrue',
+  help: 'Export only the SVG <symbol> sprite and not every single SVG',
+});
 
 const update = subparser.addParser('update', {
   addHelp: true,
@@ -42,6 +46,8 @@ update.addArgument('directory', {
   help: 'The directory to copy the SVGs into',
 });
 
+const args = parser.parseArgs();
+
 const copyIcons = dir => {
   const activeDir = path.resolve('./', dir);
   const destDir = `${activeDir}/airtame-icons`;
@@ -51,29 +57,31 @@ const copyIcons = dir => {
     fse.mkdirSync(activeDir, err => console.log(err));
   }
 
-  fse.mkdir(destDir, err => {
-    if (err) {
-      return console.log(err);
-    }
-    console.log('copying');
-    ncp(
-      srcDir,
-      destDir,
-      {
-        filter: /^(.(?!.*\.js$|.*\.json|.*\.md))*$/,
-      },
-      err => {
-        if (err) {
-          return console.log(err);
-        }
+  fse.mkdirSync(destDir, err => console.log(err));
 
-        return console.log(`SVG files copied successfuly into ${destDir}`);
+  if (args.sprite) {
+    fse
+      .copy(`${srcDir}/airtame-icons-sprite.svg`, `${destDir}/airtame-icons-sprite.svg`)
+      .then(() =>
+        console.log(
+          `SVG sprite copied successfuly into \x1b[34m\x1b[1m${destDir}/airtame-icons-sprite.svg`
+        )
+      )
+      .catch(err => console.log(err));
+  } else {
+    const files = fse.readdirSync(srcDir);
+    const promises = [];
+    files.forEach(file => {
+      if (file.includes('.svg')) {
+        promises.push(fse.copy(`${srcDir}/${file}`, `${destDir}/${file}`));
       }
-    );
-  });
-};
+    });
 
-const args = parser.parseArgs();
+    Promise.all(promises)
+      .then(() => console.log(`SVG files copied successfuly into \x1b[34m\x1b[1m${destDir}\x1b[0m`))
+      .catch(err => console.log(err));
+  }
+};
 
 if (args.command === 'update') {
   let command = 'npm install --save airtame-icons';
