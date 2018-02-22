@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import * as Icons from '../../build';
+import * as Icons from '../../release';
 import iconMap from '../../icon-map';
 
 import './style.scss';

@@ -3,5 +3,6 @@ npm-debug.log
 node_modules
 dist
 build
+release
 icon-map.js
 .vscode

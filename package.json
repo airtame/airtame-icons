@@ -11,8 +11,15 @@
   },
   "license": "ISC",
   "author": "Airtame",
-  "contributors": ["Marcos Mellado <marcos@airtame.com> (http://mellados.com)"],
-  "keywords": ["airtame", "icons", "svg", "react"],
+  "contributors": [
+    "Marcos Mellado <marcos@airtame.com> (http://mellados.com)"
+  ],
+  "keywords": [
+    "airtame",
+    "icons",
+    "svg",
+    "react"
+  ],
   "dependencies": {
     "argparse": "^1.0.10",
     "fs-extra": "^5.0.0",
@@ -24,8 +31,10 @@
   },
   "devDependencies": {
     "airtame-gooey": "^2.5.1",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
@@ -59,15 +68,15 @@
     "webpack-dev-server": "^2.11.1"
   },
   "scripts": {
-    "clean": "rimraf -rf build && rimraf icon-map.js && rimraf -rf dist",
+    "clean": "rimraf -rf build && rimraf icon-map.js && rimraf -rf dist && rimraf -rf release",
     "build:icons": "node ./src/build.js",
-    "build:files": "copyfiles -f ./src/cli.js README.md CHANGELOG.md package.json build",
+    "build:files": "copyfiles -f ./src/cli.js README.md CHANGELOG.md package.json release",
     "build:site": "cross-env NODE_ENV=production webpack",
-    "build": "npm run clean && npm run build:icons && npm run build:files && npm run build:site",
-    "dev":
-      "npm run clean && npm run build:icons && cross-env NODE_ENV=development webpack-dev-server --hot --inline",
+    "build:babel": "cross-env NODE_ENV=release babel ./build --out-dir ./release --ignore *.spec.js,test,node_modules",
+    "build": "npm run clean && npm run build:icons && npm run build:babel && npm run build:files && npm run build:site",
+    "dev": "npm run clean && npm run build:icons && cross-env NODE_ENV=development webpack-dev-server --hot --inline",
     "gh-pages": "gh-pages -d dist",
-    "publish": "npm publish ./build",
+    "publish": "npm publish ./release",
     "release": "npm run build && npm run publish && npm run gh-pages"
   }
 }

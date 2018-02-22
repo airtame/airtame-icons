@@ -12,10 +12,6 @@ const optimizeSvgs = (rootDir, outDir) => {
   const svgs = fse.readdirSync(rootDir);
   const svgo = new Svgo({ plugins: svgoConfig });
   const promises = [];
-  // Create out dir if it doesn't exist
-  if (!fse.existsSync(outDir)) {
-    fse.mkdirSync(outDir);
-  }
 
   svgs.forEach(svg => {
     const currentFile = `${rootDir}/${svg}`;
@@ -51,18 +47,18 @@ const optimizeSvgs = (rootDir, outDir) => {
   return promises;
 };
 
-const buildReactComponents = rootDir => {
-  const svgs = fse.readdirSync(rootDir);
-  const outFile = `${rootDir}/index.js`;
+const buildReactComponents = (buildDir, releaseDir) => {
+  const svgs = fse.readdirSync(releaseDir);
+  const outFile = `${buildDir}/index.js`;
   const promises = [];
 
   // Create the file for the components
-  fse.writeFile(outFile, "import React from 'react';\n\n");
+  fse.writeFileSync(outFile, '');
 
   svgs.forEach(svg => {
     promises.push(
       new Promise((resolve, reject) => {
-        const svgFile = `${rootDir}/${svg}`;
+        const svgFile = `${releaseDir}/${svg}`;
         const componentName = svg
           .replace('.svg', '')
           .split('-')
@@ -77,13 +73,13 @@ const buildReactComponents = rootDir => {
 
           svgr(svgCode, { prettier: true, componentName })
             .then(component => {
-              const cleanComponent = component
-                .replace('import React from "react";\n\n', '')
-                .replace(`export default ${componentName};`, '');
-              fse.appendFile(outFile, `export ${cleanComponent}`, err => {
+              const exportedComponent = `export ${componentName} from './${componentName}.js';\n`;
+              fse.appendFile(outFile, exportedComponent, err => {
                 if (err) {
                   reject(err);
                 }
+                const componentFile = `${buildDir}/${componentName}.js`;
+                fse.writeFileSync(componentFile, component);
                 console.log(`Component \x1b[34m<${componentName} />\x1b[0m created`);
                 resolve();
               });
@@ -97,19 +93,18 @@ const buildReactComponents = rootDir => {
   return promises;
 };
 
-const buildSVGSprite = () => {
-  const iconFolder = path.resolve(__dirname, '../build');
+const buildSVGSprite = releaseDir => {
   const sprite = svgstore();
 
   iconMap.forEach(icon => {
     sprite.add(
       icon.fileName.split('.svg')[0],
-      fse.readFileSync(`${iconFolder}/${icon.fileName}`, 'utf8')
+      fse.readFileSync(`${releaseDir}/${icon.fileName}`, 'utf8')
     );
     console.log(`\x1b[34m${icon.fileName}\x1b[0m added to sprite`);
   });
 
-  return fse.writeFileSync(`${iconFolder}/airtame-icons-sprite.svg`, sprite);
+  return fse.writeFileSync(`${releaseDir}/airtame-icons-sprite.svg`, sprite);
 };
 
 const capitalize = str => {
@@ -119,18 +114,29 @@ const capitalize = str => {
 const build = () => {
   const rootDir = path.resolve(__dirname, '../');
   const iconsDir = path.resolve(__dirname, 'icons');
-  const outDir = path.resolve(__dirname, '../build');
+  const buildDir = path.resolve(__dirname, '../build');
+  const releaseDir = path.resolve(__dirname, '../release');
+
+  // Create out dir if it doesn't exist
+  if (!fse.existsSync(buildDir)) {
+    fse.mkdirSync(buildDir);
+  }
+
+  // Create out dir if it doesn't exist
+  if (!fse.existsSync(releaseDir)) {
+    fse.mkdirSync(releaseDir);
+  }
 
   console.log('\x1b[1m** Optimizing SVGs **\x1b[0m');
-  Promise.all(optimizeSvgs(iconsDir, outDir))
+  Promise.all(optimizeSvgs(iconsDir, releaseDir))
     .then(() => {
       console.log('\n\x1b[1m** Building React Components **\x1b[0m');
-      const promises = buildReactComponents(outDir);
+      const promises = buildReactComponents(buildDir, releaseDir);
       return Promise.all(promises).catch(err => err);
     })
     .then(() => {
       console.log('\n\x1b[1m** Building SVG Sprite **\x1b[0m');
-      buildSVGSprite();
+      buildSVGSprite(releaseDir);
     })
     .then(() => {
       const iconMapFile = `${rootDir}/icon-map.js`;
