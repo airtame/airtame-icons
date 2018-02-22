@@ -1,11 +1,15 @@
 @import '../../node_modules/airtame-gooey/global/reset';
+$font-sans-serif: 'Open Sans', sans-serif;
 @import '../../node_modules/airtame-gooey/global/colors';
+@import '../../node_modules/airtame-gooey/components/textfield/textfield';
+
 $secondary-color: #8f99b3;
 $transition-function: cubic-bezier(0.65, 0.05, 0.36, 1);
 
 body {
   font-family: 'Open Sans', sans-serif;
   padding: 50px;
+  padding-bottom: 100px;
 
   background: $deep-ocean;
   color: $white;
@@ -17,10 +21,33 @@ h1 {
   margin-bottom: 50px;
 }
 
+.search-box {
+  @include textfield();
+  margin: 50px auto;
+  position: relative;
+
+  input {
+    padding-left: 50px;
+  }
+
+  svg {
+    width: 30px;
+    height: 30px;
+    fill: $secondary-color;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+  }
+}
+
 .icons-wrapper {
   width: 80%;
   margin: 0 auto;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 
   .icon-container {
     display: inline-block;
@@ -28,16 +55,33 @@ h1 {
     border: 1px solid $secondary-color;
     margin: 10px;
     box-shadow: 0 4px 30px -6px rgba($pure-black, 1);
+    min-height: 200px;
 
     &:hover svg {
       transform: scale(1.2);
       fill: $white;
     }
 
+    .icon-container-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     h2 {
       font-size: 16px;
       font-weight: 300;
       margin-bottom: 15px;
+      align-self: flex-start;
+      width: 100%;
+
+      span {
+        cursor: help;
+      }
+    }
+
+    h3 {
+      align-self: flex-end;
     }
 
     span {
@@ -59,10 +103,25 @@ h1 {
   }
 
   svg {
-    width: 50px;
+    max-width: 50px;
+    height: 50px;
     margin: 10px auto;
     fill: $secondary-color;
     transform: scale(1);
     transition: transform .3s $transition-function, fill .3s $transition-function;
+    align-self: stretch;
+
+    &.face {
+      ellipse,
+      path {
+        fill: $deep-ocean;
+      }
+
+      rect {
+        fill: $deep-ocean;
+        width: 24px;
+        height: 3.33333333px;
+      }
+    }
   }
 }
