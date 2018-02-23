@@ -102,7 +102,7 @@ const svgoConfig = [
     removeDimensions: true,
   },
   {
-    removeAttrs: { attrs: '(stroke|fill|width|height)' },
+    removeAttrs: { attrs: '' },
   },
 ];
 

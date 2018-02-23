@@ -106,10 +106,15 @@ h1 {
     max-width: 50px;
     height: 50px;
     margin: 10px auto;
-    fill: $secondary-color;
+
     transform: scale(1);
     transition: transform .3s $transition-function, fill .3s $transition-function;
     align-self: stretch;
+
+    path,
+    circle {
+      fill: $secondary-color;
+    }
 
     &.face {
       ellipse,
@@ -119,8 +124,6 @@ h1 {
 
       rect {
         fill: $deep-ocean;
-        width: 24px;
-        height: 3.33333333px;
       }
     }
   }
