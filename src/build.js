@@ -8,6 +8,12 @@ const svgstore = require('svgstore');
 const svgoConfig = require('./util/svgo-config');
 const iconMap = [];
 
+/**
+ * Optimizes SVGs in a given directory
+ * @param {string} rootDir - Directory with the original SVGs
+ * @param {*} outDir - Directory for dumping the optimized SVGs
+ * @return {Array} Array of promises with the optimization of each SVG
+ */
 const optimizeSvgs = (rootDir, outDir) => {
   const svgs = fse.readdirSync(rootDir);
   const svgo = new Svgo({ plugins: svgoConfig });
@@ -47,6 +53,12 @@ const optimizeSvgs = (rootDir, outDir) => {
   return promises;
 };
 
+/**
+ * Build React components from SVG files
+ * @param {string} buildDir - Directory where the svgs to convert into component live
+ * @param {string} releaseDir - Directory to be published as a package
+ * @return {Array} Array of promises for the generation of each component
+ */
 const buildReactComponents = (buildDir, releaseDir) => {
   const svgs = fse.readdirSync(releaseDir);
   const outFile = `${buildDir}/index.js`;
@@ -93,6 +105,11 @@ const buildReactComponents = (buildDir, releaseDir) => {
   return promises;
 };
 
+/**
+ * Builds the symbol based SVG sprite
+ * @param {string} releaseDir - Path to the directory that will be published
+ * @return {Boolean} Flag indicating if the sprite was properly written
+ */
 const buildSVGSprite = releaseDir => {
   const sprite = svgstore();
 
@@ -111,6 +128,9 @@ const capitalize = str => {
   return str.charAt(0).toUpperCase() + str.slice(1);
 };
 
+/**
+ * Runs all build processes for icons
+ */
 const build = () => {
   const rootDir = path.resolve(__dirname, '../');
   const iconsDir = path.resolve(__dirname, 'icons');

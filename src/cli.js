@@ -11,6 +11,7 @@ const exec = util.promisify(require('child_process').exec);
 const projectPackage = require('./package.json');
 const SCRIPT_VERSION = projectPackage.version;
 
+// Parsers to read CLI arguments
 const parser = new ArgumentParser({
   version: SCRIPT_VERSION,
   addHelp: true,
@@ -47,7 +48,12 @@ update.addArgument('directory', {
 
 const args = parser.parseArgs();
 
-const copyIcons = dir => {
+/**
+ * Copies icons from the module to a given location
+ * @param {string} dir - directory to dump the icons to
+ * @param {Boolean} spriteOnly - Flag indicating of only the SVG sprite should be copied
+ */
+const copyIcons = (dir, spriteOnly) => {
   const activeDir = path.resolve('./', dir);
   const destDir = `${activeDir}/airtame-icons`;
   const srcDir = path.resolve(require.resolve('airtame-icons'), '../');
@@ -58,7 +64,7 @@ const copyIcons = dir => {
 
   fse.mkdirSync(destDir, err => console.log(err));
 
-  if (args.sprite) {
+  if (spriteOnly) {
     fse
       .copy(`${srcDir}/airtame-icons-sprite.svg`, `${destDir}/airtame-icons-sprite.svg`)
       .then(() =>
@@ -92,5 +98,5 @@ if (args.command === 'update') {
     .then(() => copyIcons(args.directory))
     .catch(err => console.log(`ERROR >>> ${err}`));
 } else if (args.command === 'eject') {
-  copyIcons(args.directory);
+  copyIcons(args.directory, args.sprite);
 }
