@@ -55,7 +55,6 @@ h1 {
     border: 1px solid $secondary-color;
     margin: 10px;
     box-shadow: 0 4px 30px -6px rgba($pure-black, 1);
-    min-height: 200px;
 
     &:hover {
       svg {
@@ -82,23 +81,20 @@ h1 {
     .icon-container-wrapper {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      justify-content: space-between;
+      min-height: 180px;
     }
 
     h2 {
       font-size: 16px;
       font-weight: 300;
       margin-bottom: 15px;
-      align-self: flex-start;
       width: 100%;
 
       span {
         cursor: help;
+        display: inline;
       }
-    }
-
-    h3 {
-      align-self: flex-end;
     }
 
     span {
@@ -126,7 +122,6 @@ h1 {
 
     transform: scale(1);
     transition: transform .3s $transition-function, fill .3s $transition-function;
-    align-self: stretch;
 
     path,
     circle {
