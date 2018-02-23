@@ -79,11 +79,7 @@ class App extends Component {
               <li
                 className="icon-container"
                 key={icon.fileName}
-                title={
-                  isFace
-                    ? 'This icon needs some styles for the inner elements to be displayed'
-                    : null
-                }
+                title={isFace ? 'This is a multi-color icon' : null}
               >
                 <div className="icon-container-wrapper">
                   <h2>
