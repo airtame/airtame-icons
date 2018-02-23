@@ -57,9 +57,26 @@ h1 {
     box-shadow: 0 4px 30px -6px rgba($pure-black, 1);
     min-height: 200px;
 
-    &:hover svg {
-      transform: scale(1.2);
-      fill: $white;
+    &:hover {
+      svg {
+        transform: scale(1.2);
+      }
+
+      path,
+      circle {
+        fill: $white;
+      }
+
+      .face {
+        ellipse,
+        path {
+          fill: $deep-ocean;
+        }
+
+        rect {
+          fill: $deep-ocean;
+        }
+      }
     }
 
     .icon-container-wrapper {
