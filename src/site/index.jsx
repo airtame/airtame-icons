@@ -32,6 +32,10 @@ class App extends Component {
     });
   };
 
+  /**
+   * Updates the state with the filtered list of icons to be rendered on the screen
+   * @return {Array} The array of icons matching the active search query
+   */
   getFilteredIcons = () => {
     const { searchQuery } = this.state;
     const { icons } = this.props;
