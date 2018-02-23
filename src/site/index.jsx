@@ -76,20 +76,18 @@ class App extends Component {
             const isFace = icon.fileName.indexOf('-face') >= 0;
 
             return (
-              <li
-                className="icon-container"
-                key={icon.fileName}
-                title={isFace ? 'This is a multi-color icon' : null}
-              >
+              <li className="icon-container" key={icon.fileName}>
                 <div className="icon-container-wrapper">
-                  <h2>
+                  <h2 title={icon.fileName}>
                     {icon.fileName}
-                    {isFace ? <span>*</span> : null}
+                    {isFace ? <span title="This is a multi-color icon">*</span> : null}
                   </h2>
                   <Icon className={isFace ? 'face' : null} />
                   <h3>
                     <span>Component</span>&nbsp;
-                    <p className="code">{`<${icon.componentName} />`}</p>
+                    <p className="code" title={`<${icon.componentName} />`}>{`<${
+                      icon.componentName
+                    } />`}</p>
                   </h3>
                 </div>
               </li>
