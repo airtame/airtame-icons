@@ -41,7 +41,7 @@ h1 {
 }
 
 .icons-wrapper {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   text-align: center;
   display: flex;
@@ -83,13 +83,16 @@ h1 {
       flex-direction: column;
       justify-content: space-between;
       min-height: 180px;
+      width: 180px;
     }
 
     h2 {
-      font-size: 16px;
-      font-weight: 300;
+      font-size: 14px;
+      font-weight: 600;
       margin-bottom: 15px;
+      line-height: 1.2;
       width: 100%;
+      word-wrap: break-word;
 
       span {
         cursor: help;
@@ -101,17 +104,18 @@ h1 {
       display: inline-block;
       padding: 5px;
       font-weight: 600;
-      font-size: 12px;
+      font-size: 11px;
       margin-top: 10px;
       margin-bottom: 5px;
     }
 
     .code {
-      color: $lipstick;
+      color: $apricot;
       font-family: Courier New, Courier, monospace;
-      font-size: 16px;
-      font-weight: 300;
+      font-size: 12px;
+      font-weight: 600;
       text-align: center;
+      word-wrap: break-word;
     }
   }
 
