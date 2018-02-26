@@ -4,23 +4,24 @@ const fse = require('fs-extra');
 const Svgo = require('svgo');
 const svgr = require('svgr').default;
 const svgstore = require('svgstore');
+const isNotTest = process.env.NODE_ENV !== 'test';
 
 const svgoConfig = require('./util/svgo-config');
 const iconMap = [];
 
 /**
  * Optimizes SVGs in a given directory
- * @param {string} rootDir - Directory with the original SVGs
- * @param {*} outDir - Directory for dumping the optimized SVGs
+ * @param {string} srcDir - Directory with the original SVGs
+ * @param {string} outDir - Directory for dumping the optimized SVGs
  * @return {Array} Array of promises with the optimization of each SVG
  */
-const optimizeSvgs = (rootDir, outDir) => {
-  const svgs = fse.readdirSync(rootDir);
+const optimizeSvgs = (srcDir, outDir) => {
+  const svgs = fse.readdirSync(srcDir);
   const svgo = new Svgo({ plugins: svgoConfig });
   const promises = [];
 
   svgs.forEach(svg => {
-    const currentFile = `${rootDir}/${svg}`;
+    const currentFile = `${srcDir}/${svg}`;
     const outFile = `${outDir}/${svg}`;
 
     promises.push(
@@ -38,9 +39,11 @@ const optimizeSvgs = (rootDir, outDir) => {
                   reject(err);
                 }
 
-                console.log(
-                  `\x1b[34m${currentFile}\x1b[0m \x1b[35m=>\x1b[0m \x1b[34m${outFile}\x1b[0m`
-                );
+                if (isNotTest) {
+                  console.log(
+                    `\x1b[34m${currentFile}\x1b[0m \x1b[35m=>\x1b[0m \x1b[34m${outFile}\x1b[0m`
+                  );
+                }
                 resolve();
               });
             })
@@ -53,15 +56,17 @@ const optimizeSvgs = (rootDir, outDir) => {
   return promises;
 };
 
+exports.optimizeSvgs = optimizeSvgs;
+
 /**
  * Build React components from SVG files
- * @param {string} buildDir - Directory where the svgs to convert into component live
+ * @param {string} srcDir - Directory where the svgs to convert into component live
  * @param {string} releaseDir - Directory to be published as a package
  * @return {Array} Array of promises for the generation of each component
  */
-const buildReactComponents = (buildDir, releaseDir) => {
+const buildReactComponents = (srcDir, releaseDir) => {
   const svgs = fse.readdirSync(releaseDir);
-  const outFile = `${buildDir}/index.js`;
+  const outFile = `${srcDir}/index.js`;
   const promises = [];
 
   // Create the file for the components
@@ -90,9 +95,11 @@ const buildReactComponents = (buildDir, releaseDir) => {
                 if (err) {
                   reject(err);
                 }
-                const componentFile = `${buildDir}/${componentName}.js`;
+                const componentFile = `${srcDir}/${componentName}.js`;
                 fse.writeFileSync(componentFile, component);
-                console.log(`Component \x1b[34m<${componentName} />\x1b[0m created`);
+                if (isNotTest) {
+                  console.log(`Component \x1b[34m<${componentName} />\x1b[0m created`);
+                }
                 resolve();
               });
             })
@@ -105,24 +112,28 @@ const buildReactComponents = (buildDir, releaseDir) => {
   return promises;
 };
 
+exports.buildReactComponents = buildReactComponents;
+
 /**
  * Builds the symbol based SVG sprite
- * @param {string} releaseDir - Path to the directory that will be published
+ * @param {string} outDir - Path to the directory that will be published
  * @return {Boolean} Flag indicating if the sprite was properly written
  */
-const buildSVGSprite = releaseDir => {
+const buildSVGSprite = outDir => {
+  const svgs = fse.readdirSync(outDir);
   const sprite = svgstore();
 
-  iconMap.forEach(icon => {
-    sprite.add(
-      icon.fileName.split('.svg')[0],
-      fse.readFileSync(`${releaseDir}/${icon.fileName}`, 'utf8')
-    );
-    console.log(`\x1b[34m${icon.fileName}\x1b[0m added to sprite`);
+  svgs.forEach(svg => {
+    sprite.add(svg.split('.svg')[0], fse.readFileSync(`${outDir}/${svg}`, 'utf8'));
+    if (isNotTest) {
+      console.log(`\x1b[34m${svg}\x1b[0m added to sprite`);
+    }
   });
 
-  return fse.writeFileSync(`${releaseDir}/airtame-icons-sprite.svg`, sprite);
+  return fse.writeFileSync(`${outDir}/airtame-icons-sprite.svg`, sprite);
 };
+
+exports.buildSVGSprite = buildSVGSprite;
 
 const capitalize = str => {
   return str.charAt(0).toUpperCase() + str.slice(1);
@@ -175,4 +186,6 @@ const build = () => {
     .catch(err => console.error(`\x1b[31m\x1b[1mERROR >>>\x1b[0m \x1b[31m${err}\x1b[0m\n`));
 };
 
-build();
+if (isNotTest) {
+  build();
+}
