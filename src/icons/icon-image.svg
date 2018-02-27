@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-image</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Icons-for-Github" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-image" fill="#000000">
+            <path d="M17,34.35938 L17,85.000005 C17,86.1045745 17.8954305,87.000005 19,87.000005 L101.71875,87.000005 C102.823319,87.000005 103.71875,86.1045745 103.71875,85.000005 L103.71875,34.35938 C103.71875,33.2548105 102.823319,32.35938 101.71875,32.35938 L19,32.35938 C17.8954305,32.35938 17,33.2548105 17,34.35938 Z M77.9882698,79.64063 L26,79.64063 L51.9941409,49.64063 L66.2580705,66.125 L72.0762403,59.64063 L90,79.64063 L77.9882698,79.64063 Z M80.5,54 C77.4624339,54 75,51.5375661 75,48.5 C75,45.4624339 77.4624339,43 80.5,43 C83.5375661,43 86,45.4624339 86,48.5 C86,51.5375661 83.5375661,54 80.5,54 Z" id="Icon/Image"></path>
+        </g>
+    </g>
+</svg>
