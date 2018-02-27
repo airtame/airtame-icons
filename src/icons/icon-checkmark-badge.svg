@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
-    <title>Icon/Checkmark in badge multi color</title>
+    <title>Icon/Checkmark badge multi color</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Icons-for-Github" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Icon/Checkmark-in-badge-multi-color">
+        <g id="Icon/Checkmark-badge-multi-color">
             <circle id="Base-Circle" fill="#3EB85D" cx="60" cy="60" r="45"></circle>
             <path d="M55.6372036,67.3674123 L78.6173875,44.3441866 C79.0753004,43.8852711 79.8177239,43.8852711 80.2756367,44.3441866 L84.6565653,48.7419773 C85.1144782,49.2008927 85.1144782,49.9449416 84.6565653,50.4038571 L56.4663282,78.6558134 C56.0084153,79.1147289 55.2659918,79.1147289 54.808079,78.6558134 L38.3434347,62.1551217 C37.8855218,61.6962063 37.8855218,60.9521574 38.3434347,60.4932419 L42.7243633,56.0954512 C43.1822761,55.6365358 43.9246996,55.6365358 44.3826125,56.0954512 L55.6372036,67.3674123 Z" id="Checkmark" fill="#174E25"></path>
         </g>
