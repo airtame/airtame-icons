@@ -1,6 +1,6 @@
 {
   "name": "airtame-icons",
-  "version": "0.0.0-alpha.1",
+  "version": "0.0.0-alpha.2",
   "description": "Set of Icons used by Airtame available as SVGs and React Components",
   "main": "index.js",
   "bin": "cli.js",
