@@ -1,12 +1,13 @@
 # CHANGELOG
 
-# Unreleased
+## v0.0.0-alpha.2 [Diff](https://github.com/airtame/airtame-icons/compare/v0.0.0-alpha.1...v0.0.0-alpha.2)
 
 * Export every icon into an indificual file React component
 * Enable babel transpilation for released React components
 * Fix ESLint resolver issues
 * Updates to release process
 * Add `--sprite` option to the eject CLI function
+* Add tests for the build script
 
 ## v0.0.0-alpha.1 [Commits](https://github.com/airtame/airtame-icons/commits/v0.0.0-alpha.1)
 
