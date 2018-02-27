@@ -87,7 +87,7 @@ const svgoConfig = [
     removeRasterImages: true,
   },
   {
-    mergePaths: true,
+    mergePaths: false,
   },
   {
     convertShapeToPath: true,
