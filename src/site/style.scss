@@ -33,10 +33,13 @@ h1 {
   svg {
     width: 30px;
     height: 30px;
-    fill: $secondary-color;
     position: absolute;
     left: 10px;
     top: 10px;
+
+    path {
+      fill: $secondary-color;
+    }
   }
 }
 
@@ -59,22 +62,6 @@ h1 {
     &:hover {
       svg {
         transform: scale(1.2);
-      }
-
-      path,
-      circle {
-        fill: $white;
-      }
-
-      .face {
-        ellipse,
-        path {
-          fill: $deep-ocean;
-        }
-
-        rect {
-          fill: $deep-ocean;
-        }
       }
     }
 
@@ -127,20 +114,8 @@ h1 {
     transform: scale(1);
     transition: transform .3s $transition-function, fill .3s $transition-function;
 
-    path,
-    circle {
-      fill: $secondary-color;
-    }
-
-    &.face {
-      ellipse,
-      path {
-        fill: $deep-ocean;
-      }
-
-      rect {
-        fill: $deep-ocean;
-      }
+    & > path {
+      fill: $white;
     }
   }
 }
