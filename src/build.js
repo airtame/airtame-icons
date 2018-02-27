@@ -88,7 +88,7 @@ const buildReactComponents = (srcDir, releaseDir) => {
             reject(err);
           }
 
-          svgr(svgCode, { prettier: true, componentName })
+          svgr(svgCode, { prettier: true, svgo: false, componentName })
             .then(component => {
               const exportedComponent = `export ${componentName} from './${componentName}.js';\n`;
               fse.appendFile(outFile, exportedComponent, err => {
