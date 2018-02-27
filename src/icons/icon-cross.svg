@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
-    <title>Icon/Checkmark</title>
+    <title>Icon/Cross</title>
     <desc>Created with Sketch.</desc>
     <defs>
-        <path d="M70.484421,53.9561841 L41.148016,83.5574744 C40.5634463,84.1475085 39.6156717,84.1475085 39.031102,83.5574744 L33.4384272,77.9031721 C32.8538576,77.313138 32.8538576,76.3565036 33.4384272,75.7664695 L69.425964,39.4425256 C70.0105336,38.8524915 70.9583083,38.8524915 71.5428779,39.4425256 L92.5615728,60.6577006 C93.1461424,61.2477348 93.1461424,62.2043691 92.5615728,62.7944032 L86.968898,68.4487056 C86.3843283,69.0387397 85.4365537,69.0387397 84.851984,68.4487056 L70.484421,53.9561841 Z" id="path-1"></path>
+        <path d="M64,56 L83,56 C83.5522847,56 84,56.4477153 84,57 L84,63 C84,63.5522847 83.5522847,64 83,64 L64,64 L64,83 C64,83.5522847 63.5522847,84 63,84 L57,84 C56.4477153,84 56,83.5522847 56,83 L56,64 L37,64 C36.4477153,64 36,63.5522847 36,63 L36,57 C36,56.4477153 36.4477153,56 37,56 L56,56 L56,37 C56,36.4477153 56.4477153,36 57,36 L63,36 C63.5522847,36 64,36.4477153 64,37 L64,56 Z" id="path-1"></path>
     </defs>
     <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Icon/Checkmark">
+        <g id="Icon/Cross">
             <mask id="mask-2" fill="white">
                 <use xlink:href="#path-1"></use>
             </mask>
-            <use fill="#FFFFFF" transform="translate(63.000000, 61.500000) rotate(-180.000000) translate(-63.000000, -61.500000) " xlink:href="#path-1"></use>
+            <use fill="#FFFFFF" transform="translate(60.000000, 60.000000) rotate(45.000000) translate(-60.000000, -60.000000) " xlink:href="#path-1"></use>
             <g id="Color-alias/Icons/Icon-Light" mask="url(#mask-2)" fill="#FFFFFF">
                 <g id="Color/White">
                     <rect id="Sample" x="0" y="0" width="120" height="120"></rect>
