@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-information-badge-mc</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Icons-for-Github" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-information-badge-mc">
+            <circle id="Base-Circle" fill="#005AFF" cx="60" cy="60" r="45"></circle>
+            <path d="M51,51 L66,51 C66.5522847,51 67,51.4477153 67,52 L67,78 C67,78.5522847 67.4477153,79 68,79 L71,79 C71.5522847,79 72,79.4477153 72,80 L72,82.6033103 C72,83.1555951 71.5522847,83.6033103 71,83.6033103 L51,83.6033103 C50.4477153,83.6033103 50,83.1555951 50,82.6033103 L50,80 C50,79.4477153 50.4477153,79 51,79 L54,79 C54.5522847,79 55,78.5522847 55,78 L55,57 C55,56.4477153 54.5522847,56 54,56 L51,56 C50.4477153,56 50,55.5522847 50,55 L50,52 C50,51.4477153 50.4477153,51 51,51 Z M56,34 L66,34 C66.5522847,34 67,34.4477153 67,35 L67,44 C67,44.5522847 66.5522847,45 66,45 L56,45 C55.4477153,45 55,44.5522847 55,44 L55,35 C55,34.4477153 55.4477153,34 56,34 Z" id="icon-Information-mc" fill="#001561"></path>
+        </g>
+    </g>
+</svg>
