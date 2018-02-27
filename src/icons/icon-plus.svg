@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1221.000000, -430.000000)">
-        <g id="Icon/Plus/White" transform="translate(1197.000000, 406.000000)" fill="#F2F2F2">
-            <path d="M42.6666667,37.3333333 L55,37.3333333 C55.5522847,37.3333333 56,37.7810486 56,38.3333333 L56,41.6666667 C56,42.2189514 55.5522847,42.6666667 55,42.6666667 L42.6666667,42.6666667 L42.6666667,55 C42.6666667,55.5522847 42.2189514,56 41.6666667,56 L38.3333333,56 C37.7810486,56 37.3333333,55.5522847 37.3333333,55 L37.3333333,42.6666667 L25,42.6666667 C24.4477153,42.6666667 24,42.2189514 24,41.6666667 L24,38.3333333 C24,37.7810486 24.4477153,37.3333333 25,37.3333333 L37.3333333,37.3333333 L37.3333333,25 C37.3333333,24.4477153 37.7810486,24 38.3333333,24 L41.6666667,24 C42.2189514,24 42.6666667,24.4477153 42.6666667,25 L42.6666667,37.3333333 Z"></path>
+<svg width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon/Plus</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M64,56 L83,56 C83.5522847,56 84,56.4477153 84,57 L84,63 C84,63.5522847 83.5522847,64 83,64 L64,64 L64,83 C64,83.5522847 63.5522847,84 63,84 L57,84 C56.4477153,84 56,83.5522847 56,83 L56,64 L37,64 C36.4477153,64 36,63.5522847 36,63 L36,57 C36,56.4477153 36.4477153,56 37,56 L56,56 L56,37 C56,36.4477153 56.4477153,36 57,36 L63,36 C63.5522847,36 64,36.4477153 64,37 L64,56 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon/Plus">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use fill="#FFFFFF" xlink:href="#path-1"></use>
+            <g id="Color-alias/Icons/Icon-Light" mask="url(#mask-2)" fill="#FFFFFF">
+                <g id="Color/White">
+                    <rect id="Sample" x="0" y="0" width="120" height="120"></rect>
+                </g>
+            </g>
         </g>
     </g>
 </svg>
