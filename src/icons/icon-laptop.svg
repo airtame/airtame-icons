@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
-    <title>Icon/Laptop</title>
+    <title>icon-laptop</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Icons-for-Github" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Icon/Laptop" fill="#000000" fill-rule="nonzero">
-            <path d="M96,77 L105.514496,82.7086975 C105.815701,82.8894207 106,83.2149275 106,83.5661904 L106,86 C106,87.6568542 104.656854,89 103,89 L17,89 C15.3431458,89 14,87.6568542 14,86 L14,83.5661904 C14,83.2149275 14.1842988,82.8894207 14.4855042,82.7086975 L24,77 L24,34 C24,32.3431458 25.3431458,31 27,31 L93,31 C94.6568542,31 96,32.3431458 96,34 L96,77 Z M28,35 L28,74 L92,74 L92,35 L28,35 Z M56,85 L56,87 L64,87 L64,85 L56,85 Z" id="Icon/Screen"></path>
+        <g id="icon-laptop" fill="#000000" fill-rule="nonzero">
+            <path d="M96,77 L105.514496,82.7086975 C105.815701,82.8894207 106,83.2149275 106,83.5661904 L106,86 C106,87.6568542 104.656854,89 103,89 L17,89 C15.3431458,89 14,87.6568542 14,86 L14,83.5661904 C14,83.2149275 14.1842988,82.8894207 14.4855042,82.7086975 L24,77 L24,34 C24,32.3431458 25.3431458,31 27,31 L93,31 C94.6568542,31 96,32.3431458 96,34 L96,77 Z M28,35 L28,74 L92,74 L92,35 L28,35 Z M56,85 L56,87 L64,87 L64,85 L56,85 Z" id="icon-Screen"></path>
         </g>
     </g>
 </svg>
