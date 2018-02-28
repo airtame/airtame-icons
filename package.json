@@ -1,6 +1,6 @@
 {
   "name": "airtame-icons",
-  "version": "0.0.0-alpha.2",
+  "version": "1.0.0",
   "description": "Set of Icons used by Airtame available as SVGs and React Components",
   "main": "index.js",
   "bin": "cli.js",
@@ -74,8 +74,7 @@
     "dev":
       "npm run clean && npm run build:icons && cross-env NODE_ENV=development webpack-dev-server --hot --inline",
     "gh-pages": "gh-pages -d dist",
-    "publish": "npm publish ./release",
-    "release": "npm run build && npm run publish && npm run gh-pages",
+    "release": "npm run build && npm publish ./release && npm run gh-pages",
     "test": "cross-env NODE_ENV=test jest"
   }
 }
