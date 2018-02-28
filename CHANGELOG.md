@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## Unreleased
+## v1.0.0 [Diff](https://github.com/airtame/airtame-icons/compare/v0.0.0-alpha.2...v1.0.0)
 
 * Updated icon naming convention
 * Added `image.svg` icon
