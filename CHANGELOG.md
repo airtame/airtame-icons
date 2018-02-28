@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## Unreleased
+
+* Updated icon naming convention
+* Added `image.svg` icon
+
 ## v0.0.0-alpha.2 [Diff](https://github.com/airtame/airtame-icons/compare/v0.0.0-alpha.1...v0.0.0-alpha.2)
 
 * Export every icon into an indificual file React component
