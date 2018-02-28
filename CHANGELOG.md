@@ -4,6 +4,7 @@
 
 * Updated icon naming convention
 * Added `image.svg` icon
+* Fixed `icon-user.svg` (removed mask)
 
 ## v0.0.0-alpha.2 [Diff](https://github.com/airtame/airtame-icons/compare/v0.0.0-alpha.1...v0.0.0-alpha.2)
 
