@@ -13,6 +13,16 @@ body {
 
   background: $deep-ocean;
   color: $white;
+  text-align: center;
+}
+
+.airtame-logo {
+  path {
+    fill: $white;
+  }
+
+  width: 80px;
+  margin: 0 auto;
 }
 
 h1 {
