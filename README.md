@@ -59,6 +59,19 @@ If you only want to eject the sprite, you can do it by passing the `--sprite` op
 $ airtame-icons eject --sprite src/assets
 ```
 
+## Icons
+
+Icons are defined as SVG icons. However, some icons are more complex than others. This means, the typical icon will consist of a path with a single fill (or color), while some others will have multiple elements (layers), with their intention being to be used in multiple colors.
+
+To make it easier to understand how each icon behaves, the following naming convention cor icons has been adopted.
+
+* `icon-[name]` : A single layer icon.
+* `icon-[name]-badge`: A single layer icon inside a round badge
+* `icon-[name]-mc`: An icon consisting of multiple elements. the mc suffix stands for multi-color, as that's the motivation behind the multiple layers.
+* `icon-[name]-badge-mc`: A multi-color icon inside a round badge. This means it's a badge with the icon being a separate element in a new color instead of as a transparency.
+
+For a list of all the available icons (both as SVG files and React components), visit the [demo site](https://airtame.github.io/airtame-icons/).
+
 ## Development
 
 To add new icons, icons simply need to be dropped in the `src/icons` directory.
