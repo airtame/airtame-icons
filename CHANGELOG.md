@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v1.0.1 [Diff](https://github.com/airtame/airtame-icons/compare/v1.0.0...v1.0.1)
+
+* Added `icon-chevron-left` icon
+* Added `icon-chevron-right` icon
+
 ## v1.0.0 [Diff](https://github.com/airtame/airtame-icons/compare/v0.0.0-alpha.2...v1.0.0)
 
 * Updated icon naming convention
