@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon/Chevron left</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M60.0416306,53.2227438 L41.1113719,72.1530024 C40.7208476,72.5435267 40.0876826,72.5435267 39.6971583,72.1530024 L35.2928932,67.7487373 C34.9023689,67.358213 34.9023689,66.7250481 35.2928932,66.3345238 L59.3345238,42.2928932 C59.7250481,41.9023689 60.358213,41.9023689 60.7487373,42.2928932 L84.7903679,66.3345238 C85.1808922,66.7250481 85.1808922,67.358213 84.7903679,67.7487373 L80.3861028,72.1530024 C79.9955785,72.5435267 79.3624135,72.5435267 78.9718892,72.1530024 L60.0416306,53.2227438 Z" id="path-1"></path>
+    </defs>
+    <g id="Icon/Chevron-left" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use fill="#000000" transform="translate(60.041631, 57.222948) rotate(-90.000000) translate(-60.041631, -57.222948) " xlink:href="#path-1"></use>
+    </g>
+</svg>
