@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v1.1.1 [Diff](https://github.com/airtame/airtame-icons/compare/v1.1.0...v1.1.1)
+
+* Fixed `icon-chevron-left` icon (again, add viewbox)
+* Fixed `icon-chevron-right` icon (again, add viewbox)
+
 ## v1.1.0 [Diff](https://github.com/airtame/airtame-icons/compare/v1.0.1...v1.1.0)
 
 * Fixed `icon-chevron-left` icon (with path)
