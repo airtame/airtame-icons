@@ -1,4 +1,12 @@
-
-<svg width="120" height="120" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <path d="M56.041 57.223l18.93 18.93a1 1 0 0 1 0 1.414l-4.404 4.405a1 1 0 0 1-1.414 0L45.112 57.93a1 1 0 0 1 0-1.414l24.041-24.042a1 1 0 0 1 1.414 0l4.405 4.404a1 1 0 0 1 0 1.415l-18.93 18.93z" fill="#000" fill-rule="evenodd" />
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-chevron-left</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Icons-for-Github" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-chevron-left" fill="#000000">
+            <path d="M56.041 57.223l18.93 18.93a1 1 0 0 1 0 1.414l-4.404 4.405a1 1 0 0 1-1.414 0L45.112 57.93a1 1 0 0 1 0-1.414l24.041-24.042a1 1 0 0 1 1.414 0l4.405 4.404a1 1 0 0 1 0 1.415l-18.93 18.93z" fill="#000" fill-rule="evenodd" />
+        </g>
+    </g>
 </svg>
