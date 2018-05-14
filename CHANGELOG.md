@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.1.1 [Diff](https://github.com/airtame/airtame-icons/compare/v1.1.1...v1.2.1)
+
+* Added `icon-laptop-off.svg` icon
+
 ## v1.1.1 [Diff](https://github.com/airtame/airtame-icons/compare/v1.1.0...v1.1.1)
 
 * Fixed `icon-chevron-left` icon (again, add viewbox)
