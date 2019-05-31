@@ -8,11 +8,11 @@
     </defs>
     <g id="DG2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Icon/DG2">
-            <mask id="mask-2" fill="black">
+            <mask id="mask-2" fill="white">
                 <use xlink:href="#path-1"></use>
             </mask>
-            <use id="DG2" fill="#000000" fill-rule="evenodd" xlink:href="#path-1"></use>
-            <g id="Gray-1000" mask="url(#mask-2)" fill="#000000" fill-rule="evenodd">
+            <use id="DG2" fill="#ffffff" fill-rule="evenodd" xlink:href="#path-1"></use>
+            <g id="Gray-1000" mask="url(#mask-2)" fill="#ffffff" fill-rule="evenodd">
                 <rect id="Sample" x="0" y="0" width="120" height="120"></rect>
             </g>
         </g>
