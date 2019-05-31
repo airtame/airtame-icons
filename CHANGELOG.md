@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.3.1 [Diff](https://github.com/airtame/airtame-icons/compare/v1.2.1...v1.3.1)
+
+* Added `icon-airtame2.svg` icon
+
 ## v1.1.1 [Diff](https://github.com/airtame/airtame-icons/compare/v1.1.1...v1.2.1)
 
 * Added `icon-laptop-off.svg` icon

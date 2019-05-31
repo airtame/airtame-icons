@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55 (78076) - https://sketchapp.com -->
+    <title>DG2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M89.709873,55.25 L103.095238,55.25 L103.095238,57.625 L115,57.625 L115,62.375 L103.095238,62.375 L103.095238,64.75 L89.709873,64.75 C87.4031632,83.49498 71.6232077,98 52.5,98 C31.7893219,98 15,80.9868205 15,60 C15,39.0131795 31.7893219,22 52.5,22 C71.6232077,22 87.4031632,36.50502 89.709873,55.25 Z M75.2748691,65.3717277 C78.256773,65.3717277 80.6740838,62.9221862 80.6740838,59.9005236 C80.6740838,56.8788609 78.256773,54.4293194 75.2748691,54.4293194 C72.2929652,54.4293194 69.8756545,56.8788609 69.8756545,59.9005236 C69.8756545,62.9221862 72.2929652,65.3717277 75.2748691,65.3717277 Z" id="path-1"></path>
+    </defs>
+    <g id="DG2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon/DG2">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="DG2" fill="#ffffff" fill-rule="evenodd" xlink:href="#path-1"></use>
+            <g id="Gray-1000" mask="url(#mask-2)" fill="#ffffff" fill-rule="evenodd">
+                <rect id="Sample" x="0" y="0" width="120" height="120"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
